@@ -30,20 +30,23 @@ app.post('/todos',async (req,res)=>{
              //res.status(400).send('failed to fetch todo', error)
 
          }
-            // get all todos
-            app.get('/todos',async(req,res)=>{
-                try {
-                    const todos = await TodoModel.find({});
-                    return res.status(200).json({
-                        status: true,
-                        message: 'Todos fetched successfully',
-                        data: todos
-                        }) 
-                } catch (error) {
-                    console.log('Something went Wrong', error)
-                }
-            })
         })
+
+         // get all todos
+         app.get('/todos',async(req,res)=>{
+            try {
+                const todos = await TodoModel.find({});
+                return res.status(200).json({
+                    status: true,
+                    message: 'Todos fetched successfully',
+                    data: todos
+                    }) 
+            } catch (error) {
+                console.log('Something went Wrong', error)
+            }
+        })
+    
+           
 
 
  // update  Todo
