@@ -72,7 +72,7 @@ app.post('/todos',async (req,res)=>{
      app.delete('/todos/:id',async(req,res)=>{
          try {
              const {id} = req.params;
-             const deleteTodo = await TodoModel.findbyIdAndDelete(id);
+             const deleteTodo = await TodoModel.findByIdAndDelete(id);
              return res.status(201).json({
                  message: 'Todo dele successfully'
              })
